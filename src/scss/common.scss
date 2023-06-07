@@ -1,0 +1,226 @@
+.button {
+	position: relative;
+	z-index: 1;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 129px;
+	height: 66px;
+
+	background-image: $bgButton;
+
+	border: 2px solid #ffffff;
+	border-radius: 10px;
+
+	@media (min-width: 600px) and (min-height: 600px) {
+		width: 300px;
+		height: 75px;
+	}
+
+	&._hold {
+		opacity: 0.5;
+		pointer-events: none;
+	}
+}
+
+[type="button"] {
+	transition: all 0.3s ease 0s;
+
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	&:active {
+		transform: translateY(3px);
+	}
+}
+
+//========================================================================================================================================================
+.preloader {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 10;
+
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+
+	width: 100%;
+	min-height: 100vh;
+
+	background-image: url("@img/other/bg.png");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	overflow: hidden;
+
+	transition: all 0.3s ease 0s;
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+
+		background: linear-gradient(0deg, rgba(25, 31, 43, 0.32), rgba(25, 31, 43, 0.32));
+	}
+
+	&__block-acces {
+		padding-block: 5px;
+		padding-left: 25px;
+	}
+
+	&__acces {
+	}
+
+	&__button-box {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+		row-gap: 10px;
+	}
+
+	&__image {
+		flex: 1 1 auto;
+
+		display: flex;
+		align-items: center;
+
+		width: 156px;
+
+		background-image: url("@img/other/tennis.png");
+		background-position: center;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+
+	// .preloader__button
+
+	&__button {
+		position: relative;
+		z-index: 3;
+		margin-bottom: 25px;
+	}
+}
+
+.acces-preloader {
+	position: relative;
+	z-index: 4;
+
+	display: flex;
+	flex-direction: column;
+	max-height: calc(100vh - 10px);
+	max-width: 100vw;
+	padding-block: 10px 40px;
+	padding-inline: 10px;
+
+	background-color: rgba(16, 16, 16, 0.64);
+	border: 1px solid #ffffff;
+	border-radius: 20px;
+
+	overflow: auto;
+
+	&._hide {
+		display: none;
+	}
+
+	&__title {
+		font-size: 20px;
+		line-height: 1;
+		text-transform: uppercase;
+
+		color: #ffffff;
+
+		margin-bottom: 10px;
+	}
+
+	// .acces-preloader__text
+
+	&__text {
+		padding-bottom: 12px;
+	}
+
+	&__link {
+		color: #ebff00;
+	}
+}
+
+.text-pre {
+	font-weight: 800;
+	font-size: 20px;
+	line-height: math.div(24, 20);
+
+	color: #ffffff;
+
+	&__title {
+		text-transform: uppercase;
+	}
+	@media (min-width: 700px) and (min-height: 700px) {
+		font-size: 24px;
+	}
+	@media (max-width: 650px) {
+		font-size: 16px;
+	}
+}
+
+.btn-home {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: 133px;
+	height: 39px;
+
+	background-color: rgba(66, 0, 255, 0.6);
+	border-radius: 19.5px;
+
+	font-weight: 500;
+	font-size: 24px;
+	line-height: math.div(29, 24);
+
+	color: #ffffff;
+}
+
+.score,
+.points {
+	&._no-money {
+		animation: no-money 0.7s ease 2;
+	}
+	&._delete-money {
+		animation: delete-money 0.7s ease;
+	}
+	&._anim-add-money {
+		animation: add-money 0.5s ease 3;
+	}
+}
+
+.icon-game {
+	width: 28px;
+	height: 29px;
+	background-image: url("@img/icons/coin.svg");
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	&._anim-icon-jump {
+		animation: jump_icon 5s ease;
+	}
+	&._anim-icon-scale {
+		animation: scale_icon 0.5s ease 2;
+	}
+	&._anim-icon-rotate {
+		animation: rotate_icon 1.5s ease-out 1;
+	}
+	&._anim-icon-rotate-2 {
+		animation: rotate_icon-2 1.5s ease 1;
+	}
+}
+
+._touch-hack {
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+//========================================================================================================================================================
